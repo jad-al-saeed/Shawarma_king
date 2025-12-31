@@ -1,0 +1,87 @@
+.main-branches {
+    background: rgb(241, 181, 51);
+    margin: 0;
+}
+
+.brand-text {
+    font-size: 21px;
+    font-weight: 500;
+    color: rgb(241, 181, 51);
+}
+
+.cards-container {
+    width: 100%;
+    padding: 1rem;
+}
+
+.cards-scroller {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.card-body {
+    background: rgb(88, 35, 10);
+    color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.card-text {
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+    .cards-container {
+        overflow-x: auto;
+        padding: 1rem 0;
+    }
+
+    .cards-scroller {
+        flex-direction: row;
+        padding: 0 1rem;
+    }
+
+    .card {
+        flex: 0 0 288px;
+        margin: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .cards-container {
+        display: flex;
+        justify-content: center;
+        padding: 2rem 0;
+    }
+
+    .cards-scroller {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        max-width: 1400px;
+    }
+
+    .card {
+        transition: transform 0.25s ease;
+    }
+
+    .card:hover {
+        transform: scale(1.03);
+    }
+}
+

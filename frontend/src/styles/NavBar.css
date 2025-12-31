@@ -1,0 +1,354 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(88, 35, 10);
+  padding: 0 50px;
+  position: relative;
+  min-height: 120px;
+}
+
+nav img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10px;
+}
+
+/* Left and Right sections - balanced */
+nav .left,
+nav .right {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+nav .left {
+  justify-content: flex-start;
+}
+
+nav .right {
+  justify-content: flex-end;
+}
+
+/* Center the links within left/right sections */
+nav .left,
+nav .right {
+  gap: 50px;
+}
+
+/* Logo container - centered */
+nav .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  pointer-events: none; /* Allow clicking through */
+}
+
+nav .logo a {
+  pointer-events: auto; /* But allow clicking the logo */
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(241, 181, 51);
+  padding: 10px 15px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+nav .left a:hover,
+nav .right a:hover {
+  background-color: rgb(241, 181, 51);
+  color: rgb(115, 49, 32);
+  box-shadow: 0 0 12px 4px rgba(241, 181, 51, 0.7);
+  border-radius: 10px;
+}
+
+/* Auth Styles */
+.user-nav-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 20px;
+}
+
+.welcome-nav {
+  color: rgb(241, 181, 51);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.logout-nav-btn {
+  background: rgb(241, 181, 51);
+  color: rgb(88, 35, 10);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+  white-space: nowrap;
+}
+
+.logout-nav-btn:hover {
+  background: rgb(255, 204, 102);
+  box-shadow: 0 0 12px 4px rgba(241, 181, 51, 0.7);
+}
+
+.login-nav-link {
+  background: rgb(241, 181, 51);
+  color: rgb(88, 35, 10) !important;
+  font-weight: 600;
+  padding: 8px 20px !important;
+  border-radius: 10px !important;
+  margin-left: 10px;
+}
+
+.login-nav-link:hover {
+  background: rgb(255, 204, 102) !important;
+  color: rgb(88, 35, 10) !important;
+  box-shadow: 0 0 12px 4px rgba(241, 181, 51, 0.7) !important;
+}
+
+.admin-nav-link {
+  background: #ffd700;
+  color: rgb(88, 35, 10) !important;
+  font-weight: 600;
+  padding: 8px 16px !important;
+  border-radius: 10px !important;
+}
+
+.admin-nav-link:hover {
+  background: #ffed4e !important;
+  color: rgb(88, 35, 10) !important;
+  box-shadow: 0 0 12px 4px rgba(255, 215, 0, 0.7) !important;
+}
+
+/* Menu Button */
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  color: rgb(241, 181, 51);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  font-size: 24px;
+  padding: 10px;
+  z-index: 101;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.menu-button:hover {
+  transform: scale(1.2);
+  color: rgb(255, 204, 102);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left.mobile-menu {
+  display: flex !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(88, 35, 10, 0.98);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  z-index: 100;
+  transition: transform 0.3s ease;
+  padding: 20px;
+  transform: translateX(-100%);
+}
+
+.left.mobile-menu.open {
+  transform: translateX(0);
+}
+
+/* Mobile menu links */
+.left.mobile-menu a,
+.left.mobile-menu .user-nav-section {
+  display: block !important;
+  font-size: 22px;
+  padding: 15px 30px;
+  width: 90%;
+  max-width: 300px;
+  text-align: center;
+  border: 2px solid rgb(241, 181, 51);
+  border-radius: 15px;
+  margin: 10px 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.left.mobile-menu a:hover {
+  background: rgb(241, 181, 51);
+  color: rgb(88, 35, 10);
+}
+
+.left.mobile-menu .user-nav-section {
+  flex-direction: column;
+  gap: 15px;
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+.left.mobile-menu .welcome-nav {
+  font-size: 20px;
+  color: rgb(241, 181, 51);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.left.mobile-menu .logout-nav-btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+}
+
+.left.mobile-menu .admin-nav-link {
+  background: #ffd700;
+  color: rgb(88, 35, 10) !important;
+}
+
+.left.mobile-menu .login-nav-link {
+  background: rgb(241, 181, 51);
+  color: rgb(88, 35, 10) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1100px) {
+  nav {
+    padding: 0 30px;
+  }
+  
+  nav .left,
+  nav .right {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  nav {
+    padding: 0 20px;
+  }
+  
+  nav .left,
+  nav .right {
+    gap: 20px;
+  }
+  
+  nav img {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+/* MOBILE VIEW - Tablet */
+@media (max-width: 768px) {
+  nav {
+    min-height: 100px;
+    padding: 0 15px;
+    justify-content: center;
+  }
+  
+  nav img {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    left: auto;
+    transform: none;
+    top: auto;
+    margin: 10px auto;
+  }
+  
+  .menu-button {
+    display: block;
+  }
+  
+  /* Hide regular navigation on mobile */
+  nav .left,
+  nav .right {
+    display: none;
+  }
+  
+  .logo {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 600px) {
+  nav {
+    min-height: 90px;
+    padding: 0 10px;
+  }
+  
+  nav img {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .menu-button {
+    right: 15px;
+    top: 15px;
+  }
+  
+  .left.mobile-menu a {
+    width: 90%;
+    font-size: 18px;
+    padding: 12px 20px;
+  }
+}
+
+/* Landscape mode */
+@media (max-width: 850px) and (orientation: landscape) {
+  .left.mobile-menu {
+    justify-content: flex-start;
+    padding-top: 80px;
+  }
+  
+  .left.mobile-menu a {
+    padding: 10px 20px;
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  
+  nav img {
+    width: 70px;
+    height: 70px;
+  }
+}
